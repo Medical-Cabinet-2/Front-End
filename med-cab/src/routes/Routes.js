@@ -1,8 +1,9 @@
 import React from "react";
 import { Route } from "react-router";
-import StrainForm from "../../features/StrainForm";
-import Strains from "../../features/strains/Strains";
-import Recommendations from "../../features/strainRecommender/Recommendations";
+import PrivateRoute from "./PrivateRoute";
+import StrainForm from "../components/forms/StrainForm";
+import Strains from "../components/strains/Strains";
+import StrainRecs from "../components/recommendations/StrainRecs";
 
 const Routes = () => {
     return (
@@ -11,7 +12,7 @@ const Routes = () => {
         <PrivateRoute
             path="/intake/recommendations"
             exact
-            component={Recommendations}
+            component={StrainRecs}
         />
         <PrivateRoute path="/strains" exact component={Strains} />
         </>
