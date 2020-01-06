@@ -1,12 +1,12 @@
 # Welcome to Med Cabinet (Jan 6, 2020 - Lambda Build Week)!
 
 ## Team:
-UI: Shawn Patel and Erik Rodriguez
-React1: Issac Moreno
-React2: Mariela Gonzales and Lexie Jiang
-Backend: Bradley Zickafoose
-Data Engineer: Nisha Arya Ahmed, Michelle Hottinger and Dylan Nason
-Machine Learning: Ira Evangelista and Bhavani Rajan
+UI: Shawn Patel and Erik Rodriguez // 
+React1: Issac Moreno // 
+React2: Mariela Gonzales and Lexie Jiang // 
+Backend: Bradley Zickafoose // 
+Data Engineer: Nisha Arya Ahmed, Michelle Hottinger and Dylan Nason // 
+Machine Learning: Ira Evangelista and Bhavani Rajan // 
 Project Lead: Anthony Hart
 
 ## Proposal:
