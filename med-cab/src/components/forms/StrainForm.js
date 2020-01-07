@@ -7,6 +7,7 @@ const StrainForm = ({ values, errors, touched }) => {
     return (
         <Form>
             <h2>Strain Search Form</h2>
+            <Field type='text' name='search' placeholder='Search' />
             <Field component='select' name='family'>
                 <option value='select' disabled>Select Type:</option>
                 <option value='sativa'>Sativa</option>
