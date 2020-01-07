@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addStrainToSaved, removeStrainFromSaved } from "../../redux/actions";
+import { addStrainToSaved, removeStrainFromSaved } from "../../store/actions";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Strain = props => {
