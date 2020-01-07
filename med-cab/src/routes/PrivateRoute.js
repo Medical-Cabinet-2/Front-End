@@ -1,23 +1,25 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import NavBar from "../../common/components/nav/NavBar";
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route
+const isAuthenticated = () => {
+    return localStorage.getItem("token") ? true : false;
+};
+
+const PrivateRoute = ({ component: Component, ...rest }) => {
+    return (
+        <Route
         {...rest}
-        render={props =>
-        localStorage.getItem("token") ? (
-            <>
-            <NavBar />
-            <div className="CenteredContainerApp" >
-                <Component {...props} />
-            </div>
-            </>
-        ) : (
-            <Redirect to="/" />
-        )
-        }
-    />
-);
+            render={(props) => 
+                isAuthenticated ? (
+                    <>
+                        <Component {...props} />
+                    </>
+                ) : (
+                    <Redirect to="/log-in" />
+                )
+            }      
+        />
+    );
+};
 
 export default PrivateRoute;

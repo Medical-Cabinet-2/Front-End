@@ -25,32 +25,32 @@ const SignUp = ({ values, errors, touched, status }) => {
             <Form>
                 {/*Name*/}
                 <label htmlFor = 'name'>Name/Nickname:</label>
-                <Field type = 'text' name = 'name' onSubmit = {handleSubmit} />
+                <Field type = 'text' name = 'name' />
                 {touched.name && errors.name && (<Errors>{errors.name} </Errors>)}
 
                 {/*Age*/}
                 <label htmlFor = 'age'>Age:</label>
-                <Field type = 'number' name = 'age' onSubmit = {handleSubmit} />
+                <Field type = 'number' name = 'age' />
                 {touched.age && errors.age && (<Errors>{errors.age} </Errors>)}
 
                 {/*Email*/}
                 <label htmlFor = 'email'>E-mail:</label>
-                <Field type = 'text' name = 'email' onSubmit = {handleSubmit} />
+                <Field type = 'text' name = 'email' />
                 {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
                 {/*State*/}
                 <label htmlFor = 'state'>State:</label>       
-                <Field type = 'text' name = 'state' onSubmit = {handleSubmit} />
+                <Field type = 'text' name = 'state' />
                 {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}     
 
                 {/*Password*/}
                 <label htmlFor = 'password'>Password:</label>
-                <Field type = 'password' name = 'password' onSubmit = {handleSubmit} />
+                <Field type = 'password' name = 'password' />
                 {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
                 {/*Terms of Service*/}
                 <label htmlFor = 'terms'>
                     Terms of Service Agreement
-                    <Field type = 'checkbox' name = 'ToS' onSubmit = {handleSubmit} />
+                    <Field type = 'checkbox' name = 'ToS' />
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
                 </label>
 
@@ -98,7 +98,6 @@ const SignUpValidation = withFormik ({
             .then(res => {
                 console.log(`success`, res);
                 setStatus(res.data);
-                resetForm();
                 props.history.push("/log-in");
             })
             .catch(err => console.log(err.response));

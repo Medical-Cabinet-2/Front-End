@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-// import axios from 'axios';
+import axios from 'axios';
 
 import { SignIn, RegisterLink, Errors } from './logInStyles';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
@@ -20,11 +20,11 @@ const LogIn = ({ values, errors, touched, status }, props) => {
             <Form>
                 {/*E-Mail*/}
                 <label htmlFor = 'email'>E-Mail:</label>
-                <Field type = 'text' name = 'email' onSubmit = {handleSubmit} />
+                <Field type = 'text' name = 'email' />
                 {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
                 {/*Password*/}
                 <label htmlFor = 'password'>Password:</label>
-                <Field type = 'password' name = 'password' onSubmit = {handleSubmit} />
+                <Field type = 'password' name = 'password' />
                 {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
             </Form>
 
