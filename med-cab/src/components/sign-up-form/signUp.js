@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-// import axios from 'axios';
+import axios from 'axios';
 
 import { Register, SignInLink, Errors } from './signUpStyles';
 
-const SignUp = ({ values, errors, touched, status }, props) => {
-    const [user, setUser] = useState([]);
+const SignUp = ({ values, errors, touched, status }) => {
+    // const [user, setUser] = useState([]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        props.addUser(user);
-        setUser({email:'', password:''});
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     props.addUser(user);
+    //     setUser({email:'', password:''});
+    // }
 
-    useEffect(() => {
-        status && setUser(user => [...user, status]);
-        console.log('Status has changed', status)
-    }, [status])
+    // useEffect(() => {
+    //     status && setUser(user => [...user, status]);
+    //     console.log('Status has changed', status)
+    // }, [status])
 
     return (
         <Register>
@@ -44,7 +44,7 @@ const SignUp = ({ values, errors, touched, status }, props) => {
 
                 {/*Password*/}
                 <label htmlFor = 'password'>Password:</label>
-                <Field type = 'text' name = 'password' onSubmit = {handleSubmit} />
+                <Field type = 'password' name = 'password' onSubmit = {handleSubmit} />
                 {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
                 {/*Terms of Service*/}
@@ -67,13 +67,13 @@ const SignUp = ({ values, errors, touched, status }, props) => {
 };
 
 const SignUpValidation = withFormik ({
-    createUser({ name, age, email, state, password }){
+    mapPropsToValues({ name, age, email, state, password }){
     return {
         name: name || '',
         age: age || '',
         email: email || '',
         state: state.toUpperCase()  || '',
-        password: ''
+        password: password || ''
     };
 },
     validationSchema: Yup.object().shape({
@@ -84,8 +84,26 @@ const SignUpValidation = withFormik ({
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password'),
         ToS: Yup.bool().test('consent', 'You have to agree to the Terms and Conditions to continue with registration.', value => value === true).required('You have to agree to the Terms and Conditions to continue with the regisration.')
     }),
-    handleSubmit(values, { setStatus }) {
+    handleSubmit(values, { setStatus, props }) {
         console.log('Submitting', values);
+        const URL = 'https://node-server-med-cabinet.herokuapp.com/api/auth/register';
+
+        const newUser = {
+            email: values.email,
+            password: values.password
+        };
+
+        axios
+            .post(`${URL}`, newUser)
+            .then(res => {
+                console.log(`success`, res);
+                setStatus(res.data);
+                resetForm();
+                props.history.push("/log-in");
+            })
+            .catch(err => console.log(err.response));
+
+        // keeping this for Issac's MVP review
         // axios
         // .post('https://reqres.in/api/users/', values)
         // .then(res => {
