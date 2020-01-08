@@ -33,7 +33,92 @@ const initialState = {
         rating: 4.7,
         effects: "Relaxed, Hungry, Uplifted",
         description: "The potency of this strain gives the consumer a one-two punch to the head and body. Its effects may help with managing nausea, stress, minor body aches, and sleeplessness.",
-        }
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        {
+            name: "Green Crack",
+            type: "sativa",
+            rating: 4.5,
+            effects: "Euphoric, Creative, Cotton Mouth",
+            description: "Green Crack has a strong and buzzy sativa high.  It provides users with a boost of energy that soon manifests as a cerebral mindset, making this an excellent wake and bake strain. Green Crack’s potency can make mundane like dishes and laundry tasks more interesting. Its effects manage nausea, anxiety and a loss of appetite.",
+        },
+        
     ]
     };
 
