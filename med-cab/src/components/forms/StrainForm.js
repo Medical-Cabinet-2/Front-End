@@ -21,10 +21,11 @@ const StrainForm = ({ values, errors, touched }) => {
                 <option value='arousing'>Arousing</option>
                 <option value='energizing'>Energizing</option>
                 <option value='sleepy'>Sleepy</option>
+                <option value='sleepy'>Sleepy</option>
             </Field>
             <Field component='select' name='flavors'>
                 <option value='select' disabled>Select desired terpene/flavor:</option>
-                <option value='herbal'>Myrcene (herbal)</option>
+                <option value='lemon'>Myrcene (herbal)</option>
                 <option value='peppery'>Caryophyllene (peppery)</option>
                 <option value='citrus'>Limonene (citrus)</option>
                 <option value='pine'>Terpinolene (pine)</option>

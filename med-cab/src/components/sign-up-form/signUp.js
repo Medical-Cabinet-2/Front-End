@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { withFormik,  Field } from 'formik';
 import { Form, FormGroup } from 'reactstrap';
 import * as Yup from 'yup';
 import axios from 'axios';
 
-import { Register, SignInLink, Errors, Heading, FormContainer,  HeadingContainer } from './signUpStyles';
+import { Register, SignInLink, Errors } from './signUpStyles';
 
-const SignUp = ({ values, errors, touched, status }) => {
+const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
     // const [user, setUser] = useState([]);
 
     // const handleSubmit = (event) => {
@@ -23,7 +23,7 @@ const SignUp = ({ values, errors, touched, status }) => {
 
     return (
         <Register>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 {/*Name*/}
                 <label htmlFor = 'name'>Name/Nickname:</label>
                 <Field type = 'text' name = 'name' />
@@ -55,7 +55,7 @@ const SignUp = ({ values, errors, touched, status }) => {
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
                 </label>
                 <FormGroup>
-                    <Field type = 'submit' name = 'submit' value ='Register' />
+                    <Field type = 'submit' name = 'submit' value ='Register' onClick={SignUpValidation}/>
                 </FormGroup>
             </Form>
             <SignInLink>
@@ -98,7 +98,7 @@ const SignUpValidation = withFormik ({
             .then(res => {
                 console.log(`success`, res);
                 setStatus(res.data);
-                props.history.push("/log-in");
+                props.history.push("/dashboard");
             })
             .catch(err => console.log(err.response));
 
