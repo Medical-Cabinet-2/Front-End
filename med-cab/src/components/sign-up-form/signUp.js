@@ -3,79 +3,55 @@ import { Link } from 'react-router-dom';
 import { withFormik,  Field } from 'formik';
 import { Form, FormGroup } from 'reactstrap';
 import * as Yup from 'yup';
-// import axios from 'axios';
+import axios from 'axios';
 
 import { Register, SignInLink, Errors, Heading, FormContainer,  HeadingContainer } from './signUpStyles';
 
-const SignUp = ({ values, errors, touched, status }, props) => {
-    const [user, setUser] = useState([]);
+const SignUp = ({ values, errors, touched, status }) => {
+    // const [user, setUser] = useState([]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        props.addUser(user);
-        setUser({email:'', password:''});
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     props.addUser(user);
+    //     setUser({email:'', password:''});
+    // }
 
-    useEffect(() => {
-        status && setUser(user => [...user, status]);
-        console.log('Status has changed', status)
-    }, [status])
+    // useEffect(() => {
+    //     status && setUser(user => [...user, status]);
+    //     console.log('Status has changed', status)
+    // }, [status])
 
     return (
         <Register>
-            <HeadingContainer>
-                <Heading>Welcome, enter some info to start filling your Med Cabinet!</Heading>
-            </HeadingContainer>
-            <FormContainer>
+            <Form>
+                {/*Name*/}
+                <label htmlFor = 'name'>Name/Nickname:</label>
+                <Field type = 'text' name = 'name' />
+                {touched.name && errors.name && (<Errors>{errors.name} </Errors>)}
 
-                <Form>
+                {/*Age*/}
+                <label htmlFor = 'age'>Age:</label>
+                <Field type = 'number' name = 'age' />
+                {touched.age && errors.age && (<Errors>{errors.age} </Errors>)}
 
-                    <FormGroup>
-                    {/*Name*/}
-                        <label htmlFor = 'name'>Username:</label>
-                        <Field type = 'text' name = 'name' onSubmit = {handleSubmit} />                   
-                    </FormGroup>
-                    {touched.name && errors.name && (<Errors>{errors.name} </Errors>)}
+                {/*Email*/}
+                <label htmlFor = 'email'>E-mail:</label>
+                <Field type = 'text' name = 'email' />
+                {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
+                {/*State*/}
+                <label htmlFor = 'state'>State:</label>       
+                <Field type = 'text' name = 'state' />
+                {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}     
 
-                    <FormGroup>
-                    {/*Age*/}
-                        <label htmlFor = 'age'>Age:</label>
-                        <Field type = 'number' name = 'age' onSubmit = {handleSubmit} />
-                        
-                    </FormGroup>
-                    {touched.age && errors.age && (<Errors>{errors.age} </Errors>)}
+                {/*Password*/}
+                <label htmlFor = 'password'>Password:</label>
+                <Field type = 'password' name = 'password' />
+                {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
-                    <FormGroup>
-                    {/*Email*/}
-                        <label htmlFor = 'email'>E-mail:</label>
-                        <Field type = 'text' name = 'email' onSubmit = {handleSubmit} />  
-                    </FormGroup>
-                    {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
-
-                    <FormGroup>
-                    {/*State*/}
-                        <label htmlFor = 'state'>State:</label>       
-                        <Field type = 'text' name = 'state' onSubmit = {handleSubmit} />
-                        
-                    </FormGroup>
-                    {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}
-
-                    <FormGroup>
-                    {/*Password*/}
-                        <label htmlFor = 'password'>Password:</label>
-                        <Field type = 'text' name = 'password' onSubmit = {handleSubmit} />
-                        
-                    </FormGroup>
-                    {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
-                    
-                    <FormGroup>
-                    {/*Terms of Service*/}
-                        <label htmlFor = 'terms'>
-                            Terms of Service Agreement
-                            <Field type = 'checkbox' name = 'ToS' onSubmit = {handleSubmit} />
-                            
-                        </label>
-                    </FormGroup>
+                {/*Terms of Service*/}
+                <label htmlFor = 'terms'>
+                    Terms of Service Agreement
+                    <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
 
                     <FormGroup>
@@ -96,13 +72,14 @@ const SignUp = ({ values, errors, touched, status }, props) => {
 };
 
 const SignUpValidation = withFormik ({
-    createUser({ name, age, email, state, password }){
+    mapPropsToValues({ name, age, email, state, password, ToS }){
     return {
         name: name || '',
         age: age || '',
         email: email || '',
-        state: state.toUpperCase()  || '',
-        password: ''
+        state: state || '',
+        password: password || '',
+        ToS: ToS || false
     };
 },
     validationSchema: Yup.object().shape({
@@ -111,10 +88,27 @@ const SignUpValidation = withFormik ({
         email: Yup.string().email('Email is invalid. ex. MyEmail@lol.co)').required('E-mail is required.'),
         state: Yup.string().length(2, 'State must be 2 characters ex. (CA)').required('State is required.'),
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password'),
-        ToS: Yup.bool().test('consent', 'You have to agree to the Terms and Conditions to continue with registration.', value => value === true).required('You have to agree to the Terms and Conditions to continue with the regisration.')
+        ToS: Yup.bool().oneOf([true], 'You have to agree to the Terms and Conditions to continue with the regisration.')
     }),
-    handleSubmit(values, { setStatus }) {
+    handleSubmit(values, { setStatus, props }) {
         console.log('Submitting', values);
+        const URL = 'https://node-server-med-cabinet.herokuapp.com/api/auth/register';
+
+        const newUser = {
+            email: values.email,
+            password: values.password
+        };
+
+        axios
+            .post(`${URL}`, newUser)
+            .then(res => {
+                console.log(`success`, res);
+                setStatus(res.data);
+                props.history.push("/log-in");
+            })
+            .catch(err => console.log(err.response));
+
+        // keeping this for Issac's MVP review
         // axios
         // .post('https://reqres.in/api/users/', values)
         // .then(res => {

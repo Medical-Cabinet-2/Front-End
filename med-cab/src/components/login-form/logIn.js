@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import { Form, FormGroup } from 'reactstrap';
 import {withFormik, Field } from 'formik';
 import * as Yup from 'yup';
-// import axios from 'axios';
+import axios from 'axios';
 
 import { SignIn, RegisterLink, Errors, Heading, FormLinks } from './logInStyles';
 import { HeadingContainer, FormContainer } from '../sign-up-form/signUpStyles';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 const LogIn = ({ values, errors, touched, status }, props) => {
-    const [user, setUser] = useState([]);
+    // const [user, setUser] = useState([]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setUser({email:'', password:''});
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     setUser({email:'', password:''});
+    // }
 
     return (
         <SignIn>
-
             <HeadingContainer>
                 <Heading>Welcome back!</Heading>
             </HeadingContainer>
@@ -61,7 +61,7 @@ const LogIn = ({ values, errors, touched, status }, props) => {
 };
 
 const LogInValidation = withFormik ({
-    confirmUser({ email, password }) {
+    mapPropsToValues({ email, password }) {
         return {
             email: email || '',
             password: password || ''
@@ -71,8 +71,18 @@ const LogInValidation = withFormik ({
         email: Yup.string().email('Not a vaild email ex. (MyEmail@aol.com)').required('E-mail is required.'),
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password')
     }),
-    handleSubmit(values, { setStatus }) {
+    handleSubmit(values, { setStatus, props }) {
         console.log('Submitting', values);
+        const URL = 'https://node-server-med-cabinet.herokuapp.com/api/auth/login';
+
+        axios
+            .post(`${URL}`, values)
+            .then(res => {
+                console.log(res);
+                localStorage.setItem("token", res.data.token);
+                props.history.push('/dashboard');
+            })
+            .catch(err => console.log(err.response));
     }
 })(LogIn);
 

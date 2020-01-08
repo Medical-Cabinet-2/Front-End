@@ -6,7 +6,7 @@ import SavedStrainsList from '../recommendations/SavedStrainsList';
 const Display = (props) => {
     const routeChange = (e) => {
         e.preventDefault();
-        let path = "/intake/symptoms";
+        let path = "/strainform";
         props.history.push(path);
     };
 
