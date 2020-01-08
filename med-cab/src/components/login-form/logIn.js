@@ -28,14 +28,14 @@ const LogIn = ({ values, errors, touched, status }, props) => {
                     <FormGroup>
                     {/*E-Mail*/}
                     <label htmlFor = 'email'>E-Mail:</label>
-                    <Field type = 'text' name = 'email' onSubmit = {handleSubmit} />
+                    <Field type = 'text' name = 'email' />
                     </FormGroup>
                     {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
 
                     <FormGroup>
                     {/*Password*/}
                     <label htmlFor = 'password'>Password:</label>
-                    <Field type = 'text' name = 'password' onSubmit = {handleSubmit} />
+                    <Field type = 'text' name = 'password' />
                     </FormGroup>
                     {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 

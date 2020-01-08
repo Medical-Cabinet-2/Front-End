@@ -53,20 +53,14 @@ const SignUp = ({ values, errors, touched, status }) => {
                     Terms of Service Agreement
                     <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
-
-                    <FormGroup>
-                        <Field type = 'submit' name = 'submit' value ='Register' />
-                    </FormGroup>
-
-                </Form>
-
-            </FormContainer>
-
+                </label>
+                <FormGroup>
+                    <Field type = 'submit' name = 'submit' value ='Register' />
+                </FormGroup>
+            </Form>
             <SignInLink>
                 <p>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></p>
             </SignInLink>
-            
-
         </Register>
     )
 };

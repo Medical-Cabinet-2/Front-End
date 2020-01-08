@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Col, Row, Button } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import SavedStrainsList from '../recommendations/SavedStrainsList';
+import AppHeader from './AppHeader';
+import AppFooter from './AppFooter';
 
 const Display = (props) => {
     const routeChange = (e) => {
@@ -12,6 +14,7 @@ const Display = (props) => {
 
     return (
         <Row>
+            <AppHeader />
             <Col>
                 <SavedStrainsList allowSearch />
                 <Button
@@ -22,6 +25,7 @@ const Display = (props) => {
                     Find New Strains!
                 </Button>
             </Col>
+            <AppFooter />
         </Row>
     );
 };
