@@ -10,7 +10,6 @@ import { MainContainer } from './AppStyles'
 function App() {
   return (
     <MainContainer>
-      <Route path = '/' component = {VerifyAge} />
       <Route path = '/log-in' component = {LogIn} />
       <Route path = '/register' component = {SignUp} />
     </MainContainer>

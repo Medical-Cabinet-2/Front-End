@@ -1,3 +1,4 @@
+import Background from './images/mainBackground.jpg';
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
@@ -5,4 +6,9 @@ export const MainContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url(${Background});
+    height: 100vh;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    z-index: -10;
 `;
