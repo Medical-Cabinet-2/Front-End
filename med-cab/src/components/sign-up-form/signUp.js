@@ -12,8 +12,8 @@ const SignUp = ({ values, errors, touched, status }) => {
 
     // const handleSubmit = (event) => {
     //     event.preventDefault();
-    //     props.addUser(user);
-    //     setUser({email:'', password:''});
+        // props.addUser(user);
+        // setUser({email:'', password:''});
     // }
 
     // useEffect(() => {
@@ -23,44 +23,66 @@ const SignUp = ({ values, errors, touched, status }) => {
 
     return (
         <Register>
-            <Form>
-                {/*Name*/}
-                <label htmlFor = 'name'>Name/Nickname:</label>
-                <Field type = 'text' name = 'name' />
-                {touched.name && errors.name && (<Errors>{errors.name} </Errors>)}
+            <HeadingContainer>
+                <Heading>Welcome! Please enter some info to start filling your Med Cabinet!</Heading>
+            </HeadingContainer>
+            
+            <FormContainer >
+                <Form id = 'registerInputs'>
+                    <FormGroup>
+                    {/*Name*/}
+                        <label htmlFor = 'name'>Name/Nickname:</label>
+                        <Field type = 'text' name = 'name' />
+                    </FormGroup>
+                    {touched.name && errors.name && (<Errors>{errors.name} </Errors>)}
 
-                {/*Age*/}
-                <label htmlFor = 'age'>Age:</label>
-                <Field type = 'number' name = 'age' />
-                {touched.age && errors.age && (<Errors>{errors.age} </Errors>)}
+                    <FormGroup>
+                    {/*Age*/}
+                        <label htmlFor = 'age'>Age:</label>
+                        <Field type = 'number' name = 'age' />
+                    </FormGroup>
+                    {touched.age && errors.age && (<Errors>{errors.age} </Errors>)}
 
-                {/*Email*/}
-                <label htmlFor = 'email'>E-mail:</label>
-                <Field type = 'text' name = 'email' />
-                {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
-                {/*State*/}
-                <label htmlFor = 'state'>State:</label>       
-                <Field type = 'text' name = 'state' />
-                {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}     
+                    <FormGroup>
+                    {/*Email*/}
+                        <label htmlFor = 'email'>E-mail:</label>
+                        <Field type = 'text' name = 'email' />
+                    </FormGroup>
+                    {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
 
-                {/*Password*/}
-                <label htmlFor = 'password'>Password:</label>
-                <Field type = 'password' name = 'password' />
-                {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
+                    <FormGroup>
+                    {/*State*/}
+                        <label htmlFor = 'state'>State:</label>       
+                        <Field type = 'text' name = 'state' />
+                    </FormGroup>
+                    {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}     
 
-                {/*Terms of Service*/}
-                <label htmlFor = 'terms'>
-                    Terms of Service Agreement
-                    <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
+                    <FormGroup>
+                    {/*Password*/}
+                        <label htmlFor = 'password'>Password:</label>
+                        <Field type = 'password' name = 'password' />
+                    </FormGroup>
+                    {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
+ 
+                    <FormGroup id = 'terms'>
+                    {/*Terms of Service*/}                    
+                        <label htmlFor = 'terms'>
+                            Terms of Service Agreement
+                            <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
+                            
+                        </label>
+                    </FormGroup>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
-                </label>
-                <FormGroup>
-                    <Field type = 'submit' name = 'submit' value ='Register' />
-                </FormGroup>
-            </Form>
+
+                    <FormGroup>
+                        <Field type = 'submit' name = 'submit' value ='Register' />
+                    </FormGroup>
+                </Form>
+            </FormContainer>
             <SignInLink>
                 <p>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></p>
             </SignInLink>
+        
         </Register>
     )
 };

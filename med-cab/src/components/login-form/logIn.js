@@ -14,17 +14,17 @@ const LogIn = ({ values, errors, touched, status }, props) => {
 
     // const handleSubmit = (event) => {
     //     event.preventDefault();
-    //     setUser({email:'', password:''});
+        // setUser({email:'', password:''});
     // }
 
     return (
         <SignIn>
+
             <HeadingContainer>
                 <Heading>Welcome back!</Heading>
             </HeadingContainer>
             <FormContainer>
-
-                <Form>
+                <Form id = 'log-in-form'>
                     <FormGroup>
                     {/*E-Mail*/}
                     <label htmlFor = 'email'>E-Mail:</label>
@@ -44,17 +44,20 @@ const LogIn = ({ values, errors, touched, status }, props) => {
                     </FormGroup>
 
                 </Form>
-
-            </FormContainer>
+                
+            </FormContainer>     
             <FormLinks>
                 <RegisterLink>
-                    <p>Don't have an account? <Link to='/register'>Click here to register.</Link></p>
+                    <p>Don't have an account? <Link class = 'links' to='/register'>Click here to register.</Link></p>
                 </RegisterLink>
 
                 <RegisterLink>
                     <p>Forgot password? <a href = '#'>Click here.</a></p>
                 </RegisterLink>
-            </FormLinks>
+
+            </FormLinks> 
+
+            
  
         </SignIn>
     )

@@ -4,7 +4,7 @@ import Routes from './routes/Routes';
 import './App.css';
 import SignUp from './components/sign-up-form/signUp';
 import LogIn from './components/login-form/logIn';
-import VerifyAge from './components/confirm-age/ageVerifier';
+
 
 import { MainContainer } from './AppStyles'
 
@@ -12,9 +12,9 @@ function App() {
 
   return (
     <MainContainer>
-      <Route path = '/' component = {VerifyAge} />
-      <Route path = '/log-in' component = {LogIn} />
-      <Route path = '/register' component = {SignUp} />
+      <Route exact path = '/' component = {LogIn} />
+      <Route exact path = '/log-in' component = {LogIn} />
+      <Route exact path = '/register' component = {SignUp} />
       <Routes />
     </MainContainer>
   );

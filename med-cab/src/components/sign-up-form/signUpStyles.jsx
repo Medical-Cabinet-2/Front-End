@@ -20,6 +20,7 @@ export const SignInLink = styled.div`
     color: white;
     background-color black;
     width: 100%;
+    padding-top: 1em;
 `;
 
 export const Errors = styled.p`
