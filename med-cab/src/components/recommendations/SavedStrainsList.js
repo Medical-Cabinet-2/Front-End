@@ -21,7 +21,8 @@ const SavedStrainsList = (props) => {
     const [filters, setFilters] = useState({
         search: '',
         type: 'select',
-        effect: 'select'
+        effect: 'select',
+        symptom: 'select'
     })
     const [searchResults, setSearchResults] = useState(savedStrains);
 
@@ -41,6 +42,10 @@ const SavedStrainsList = (props) => {
         results = results.filter(strain => 
             filters.effect === 'select' || strain.effects.toLowerCase().includes(filters.effect.toLowerCase())
         );
+
+        results = results.filter(strain => 
+            filters.symptom === 'select' || strain.description.toLowerCase().includes(filters.symptom.toLowerCase())
+        );
         
         setSearchResults(results);
     },[filters])
@@ -51,7 +56,7 @@ const SavedStrainsList = (props) => {
 
     return (
         <>
-        <h2>Saved Strains</h2>
+        <h2>Saved Strain Recommendations:</h2>
         {props.allowSearch &&
             <StrapForm>
             <FormGroup row>
@@ -59,12 +64,12 @@ const SavedStrainsList = (props) => {
                 <Input
                 type="text"
                 name="search"
-                placeholder="Search"
+                placeholder="Search saved strains..."
                 onChange={handleChange}
                 />
                 </Col>
             </FormGroup>
-
+            <h3>Type of Marijuana:</h3>
             <FormGroup row>
                 <Col sm={12}>
                 <Input
@@ -80,7 +85,7 @@ const SavedStrainsList = (props) => {
                 </Input>
                 </Col>
             </FormGroup>
-
+            <h3>Desired Feeling:</h3>
             <FormGroup row>
                 <Col sm={12}>
                 <Input
@@ -96,8 +101,29 @@ const SavedStrainsList = (props) => {
                     <option value='Uplifted' >Uplifted</option>
                     <option value='Focused' >Focused</option>
                     <option value='Hungry' >Hungry</option>
-
+                    <option value='Creative' >Creative</option>
+                    <option value='Cotton-Mouth' >Cotton Mouth</option>
+                    <option value='Euphoric' >Euphoric</option>
             
+                </Input>
+                </Col>
+            </FormGroup>
+            <h3>Symptom Treated:</h3>
+            <FormGroup row>
+                <Col sm={12}>
+                <Input
+                    type="select"
+                    name="symptom"
+                    id="symptom"
+                    onChange={handleChange}
+                >
+                    <option value='select' >Select type...</option>
+                    <option value='Anxiety'>Anxiety</option>
+                    <option value='Depression' >Depression</option>
+                    <option value='Nausea' >Nausea</option>
+                    <option value='Pain' >Pain</option>
+                    <option value='Insomnia' >Insomnia</option>
+                    <option value='Appetite' >Appetite</option>
                 </Input>
                 </Col>
             </FormGroup>
