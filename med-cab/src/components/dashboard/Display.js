@@ -5,6 +5,12 @@ import SavedStrainsList from '../recommendations/SavedStrainsList';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 
+import styled from 'styled-components';
+
+const Saved = styled.div`
+    marginTop: '5%
+`;
+
 const Display = (props) => {
     const routeChange = (e) => {
         e.preventDefault();
@@ -16,7 +22,9 @@ const Display = (props) => {
         <Row>
             <AppHeader />
             <Col>
-                <SavedStrainsList allowSearch />
+                <Saved>
+                    <SavedStrainsList allowSearch />
+                </Saved>
                 <Button
                     type='submit'
                     className="CustomButtonFilled"
