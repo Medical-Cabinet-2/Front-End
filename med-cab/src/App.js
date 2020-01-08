@@ -15,6 +15,7 @@ function App() {
       <Route path = '/' component = {VerifyAge} />
       <Route path = '/log-in' component = {LogIn} />
       <Route path = '/register' component = {SignUp} />
+      <Routes />
     </MainContainer>
   );
 };
