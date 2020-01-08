@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {withFormik, Form, Field } from 'formik';
+import { withFormik,  Field } from 'formik';
+import { Form, FormGroup } from 'reactstrap';
 import * as Yup from 'yup';
 import axios from 'axios';
 
-import { Register, SignInLink, Errors } from './signUpStyles';
+import { Register, SignInLink, Errors, Heading, FormContainer,  HeadingContainer } from './signUpStyles';
 
 const SignUp = ({ values, errors, touched, status }) => {
     // const [user, setUser] = useState([]);
@@ -52,11 +53,15 @@ const SignUp = ({ values, errors, touched, status }) => {
                     Terms of Service Agreement
                     <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
-                </label>
 
-                <Field type = 'submit' name = 'submit'  />
-                
-            </Form>
+                    <FormGroup>
+                        <Field type = 'submit' name = 'submit' value ='Register' />
+                    </FormGroup>
+
+                </Form>
+
+            </FormContainer>
+
             <SignInLink>
                 <p>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></p>
             </SignInLink>
@@ -80,7 +85,7 @@ const SignUpValidation = withFormik ({
     validationSchema: Yup.object().shape({
         name: Yup.string().required('Name is required.'),
         age: Yup.number().moreThan(21, 'You must be 21 or over to register to Med Cabinet').required('Please enter your age.'),
-        email: Yup.string().email().required('E-mail is required.'),
+        email: Yup.string().email('Email is invalid. ex. MyEmail@lol.co)').required('E-mail is required.'),
         state: Yup.string().length(2, 'State must be 2 characters ex. (CA)').required('State is required.'),
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password'),
         ToS: Yup.bool().oneOf([true], 'You have to agree to the Terms and Conditions to continue with the regisration.')
