@@ -50,7 +50,7 @@ const SignUp = ({ values, errors, touched, status }) => {
                 {/*Terms of Service*/}
                 <label htmlFor = 'terms'>
                     Terms of Service Agreement
-                    <Field type = 'checkbox' name = 'ToS' />
+                    <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
                 </label>
 
@@ -67,13 +67,14 @@ const SignUp = ({ values, errors, touched, status }) => {
 };
 
 const SignUpValidation = withFormik ({
-    mapPropsToValues({ name, age, email, state, password }){
+    mapPropsToValues({ name, age, email, state, password, ToS }){
     return {
         name: name || '',
         age: age || '',
         email: email || '',
-        state: state.toUpperCase()  || '',
-        password: password || ''
+        state: state || '',
+        password: password || '',
+        ToS: ToS || false
     };
 },
     validationSchema: Yup.object().shape({
@@ -82,7 +83,7 @@ const SignUpValidation = withFormik ({
         email: Yup.string().email().required('E-mail is required.'),
         state: Yup.string().length(2, 'State must be 2 characters ex. (CA)').required('State is required.'),
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password'),
-        ToS: Yup.bool().test('consent', 'You have to agree to the Terms and Conditions to continue with registration.', value => value === true).required('You have to agree to the Terms and Conditions to continue with the regisration.')
+        ToS: Yup.bool().oneOf([true], 'You have to agree to the Terms and Conditions to continue with the regisration.')
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submitting', values);

@@ -26,8 +26,8 @@ const LogIn = ({ values, errors, touched, status }, props) => {
                 <label htmlFor = 'password'>Password:</label>
                 <Field type = 'password' name = 'password' />
                 {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
+                <Field type = 'submit' name = 'submit' value ='Log In' />
             </Form>
-
             <RegisterLink>
                 <p>Don't have an account? <Link to='/register'>Click here to register.</Link></p>
             </RegisterLink>
