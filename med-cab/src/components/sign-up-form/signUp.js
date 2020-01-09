@@ -25,12 +25,12 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
         <Register>
             <Form onSubmit={handleSubmit}>
                 {/*Name*/}
-                <label htmlFor = 'first_name'>First Name:</label>
+                <label htmlFor = 'first_name'><b>First Name: </b></label>
                 <Field type = 'text' name = 'first_name' />
                 {touched.first_name && errors.first_name && (<Errors>{errors.first_name} </Errors>)}
 
                 {/*Name*/}
-                <label htmlFor = 'last_name'>Last Name:</label>
+                <label htmlFor = 'last_name'><b>Last Name: </b></label>
                 <Field type = 'text' name = 'last_name' />
                 {touched.last_name && errors.last_name && (<Errors>{errors.last_name} </Errors>)}
 
@@ -40,7 +40,7 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
                 {touched.age && errors.age && (<Errors>{errors.age} </Errors>)} */}
 
                 {/*Email*/}
-                <label htmlFor = 'email'>E-mail:</label>
+                <label htmlFor = 'email'><b>E-mail: </b></label>
                 <Field type = 'text' name = 'email' />
                 {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
                 {/*State*/}
@@ -49,7 +49,7 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
                 {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}      */}
 
                 {/*Password*/}
-                <label htmlFor = 'password'>Password:</label>
+                <label htmlFor = 'password'><b>Password: </b></label>
                 <Field type = 'password' name = 'password' />
                 {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
@@ -64,7 +64,7 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
                 </FormGroup>
             </Form>
             <SignInLink>
-                <p>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></p>
+                <p><b>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></b></p>
             </SignInLink>
         </Register>
     )

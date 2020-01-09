@@ -1,16 +1,25 @@
 import styled from 'styled-components';
 import FormBackground from '../../images/formBackground.jpg';
 
-export const Register = styled.div`
+export const Register = styled.div` *{ for sign up}*
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    //  justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
     background-image: url(${FormBackground});
-    background-repeat: repeat;
-    background-size: 100%;
-    border: 3px solid black;
-    flex-wrap: wrap;
-    width: 80%;
+    // background-repeat: repeat;
+     background-size: 100%;
+    // border: 3px solid black;
+    /flex-wrap: wrap;
+     width: 30%;
+    //  height: 20%;
+    // margin:0 auto;
+    font-size: 20px;
+    color: white; 
+    opacity: 0.9;
+    z-index: 1;
+    padding: 5rem;
+    max-width: 100%;
 `;
 
 export const SignInLink = styled.div`
@@ -18,16 +27,20 @@ export const SignInLink = styled.div`
     justify-content: center;
     text-align: center;
     color: white;
-    background-color black;
+    text-decoration: underline;
+    // background-color black;
     width: 100%;
+    font-size:25px;
+
 `;
 
 export const Errors = styled.p`
     font-weight: 900;
     margin: 1em 0;
     size: 2rem;
-    color: red;
+    color: white;
     font-family: "Assistant", sans-serif;
+    
 `;
 
 export const Heading = styled.h1`
@@ -36,16 +49,18 @@ export const Heading = styled.h1`
     font-family: "Courgette", cursive;
     color: white;
     padding: 0 1em;
+    background-color: yellow;
 `;
 
-export const FormContainer = styled.div`
-    background: rgb(255,255,204);
+export const FormContainer = styled.div` *{ for log in}*
+    // background: yellow;
     z-index: 1;
-    padding: 4em;
+    padding: 4.5em;
     max-width: 100%;
+  
 `;
 
-export const HeadingContainer = styled.div`
+export const HeadingContainer = styled.div` *{ for log in}*
     display: flex;
     justify-content: center;
     align-items: center;
