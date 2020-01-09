@@ -25,22 +25,22 @@ const LogIn = ({ values, errors, touched, status, handleSubmit }) => {
             </HeadingContainer>
             <FormContainer>
 
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} className="formcont">
                     <FormGroup>
                     {/* E-Mail */}
                     <label htmlFor = 'email'>E-Mail:</label>
-                    <Field type = 'text' name = 'email' />
+                    <Field type = 'text' name = 'email' className="logfield"/>
                     </FormGroup>
                     {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
 
                     <FormGroup>
                     {/* Password */}
                     <label htmlFor = 'password'>Password:</label>
-                    <Field type = 'password' name = 'password' />
+                    <Field type = 'password' name = 'password' className="logfield1"/>
                     </FormGroup>
                     {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
-                    <FormGroup>
+                    <FormGroup className="buttons">
                         <Field type = 'submit' name = 'submit' value ='Log-In' />
                     </FormGroup>
 
