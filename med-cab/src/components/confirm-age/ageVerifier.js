@@ -5,9 +5,10 @@ const VerifyAge = () => {
     const { age, setAge } = useState(0);
 
     return (
-        <header>
-            <Link to = '/log-in'>Log In</Link>
-            <Link to = '/register'>Sign Up</Link>
+        <header className="linkcont">
+            <Link to = '/log-in' className="linkz">Log In</Link>
+            <Link to = '/register' className="linkz">Sign Up</Link>
+            <Link to = '/dashboard' className="linkz">Dashboard</Link>
         </header>
     )
 }

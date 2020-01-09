@@ -25,6 +25,14 @@ const initialState = {
         effects: "Sleepy, Hungry, Uplifted",
         description: "The potency of this strain gives the consumer a one-two punch to the head and body. Its effects may help with managing nausea, stress, minor body aches, and sleeplessness.",
         img: "https://assets.wikileaf.com/assets/strains/strain/Bubba_Kush.png"
+        },
+        {
+            name: "Lamb's Bread",
+            type: "sativa",
+            rating: 4,
+            effects: "Cotton Mouth, Creative, Paranoia",
+            description: "Lamb’s Bread, Lamb’s Breath, Lambsbread - whatever the name the high is the same, with a rush of uplifting energy that hits you hard in the head and giving you a mood boost that is unparalleled. The euphoria and creativity spring to life after only a few puffs and will have you getting through an artist’s block with ease. This is a high that doesn’t want to slow down and will last for hours, so enjoy the stimulation as it takes you through the galaxy because you’ll feel out of this world. Its effects manage nausea, depressed and pain.",
+            img: "https://assets.wikileaf.com/assets/strains/strain/Lambs_Bread.jpg"
         }
     ],
     savedStrains: [
@@ -91,14 +99,6 @@ const initialState = {
             effects: "Energetic, Cotton Mouth, Euphoric",
             description: "The high from Sour Diesel comes on users quickly in the form of a warm and pleasant head rush. An uplift in mood may be noticeable as well. Although Sour Diesel stimulates synaptic activity in the brain, the character of this head high is more spacey than intensely cerebral. Users may feel chatty if surrounded by others or somewhat introspective if enjoying the strain alone. Its effects manage pain, depression and a loss of appetite.",
             img: "https://assets.wikileaf.com/assets/strains/strain/Sour_Diesel_500x500.png"
-        },
-        {
-            name: "Lamb's Bread",
-            type: "sativa",
-            rating: 4,
-            effects: "Cotton Mouth, Creative, Paranoia",
-            description: "Lamb’s Bread, Lamb’s Breath, Lambsbread - whatever the name the high is the same, with a rush of uplifting energy that hits you hard in the head and giving you a mood boost that is unparalleled. The euphoria and creativity spring to life after only a few puffs and will have you getting through an artist’s block with ease. This is a high that doesn’t want to slow down and will last for hours, so enjoy the stimulation as it takes you through the galaxy because you’ll feel out of this world. Its effects manage nausea, depressed and pain.",
-            img: "https://assets.wikileaf.com/assets/strains/strain/Lambs_Bread.jpg"
         },
         {
             name: "Lamb's Bread",

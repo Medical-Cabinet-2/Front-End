@@ -12,7 +12,12 @@ const Saved = styled.div`
 `;
 
 const Head = styled.div`
-    display: 'flex'
+    display: 'flex',
+    marginTop: '10%'
+`;
+
+const Cont = styled.div`
+    marginLeft: '5%'
 `;
 
 const Foot = styled.div`
@@ -21,6 +26,12 @@ const Foot = styled.div`
     alignContent: 'center',
     marginBottom: '5%',
     marginLeft: '50%'
+`;
+
+const BigButt = styled.div`
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center'
 `;
 
 const Display = (props) => {
@@ -36,18 +47,22 @@ const Display = (props) => {
                 <Head>
                     <AppHeader />
                 </Head>
-                <Col>
-                    <Saved>
-                        <SavedStrainsList allowSearch />
-                    </Saved>
-                    <Button
-                        type='submit'
-                        className="CustomButtonFilled"
-                        onClick={routeChange}
-                    >
-                        Find New Strains!
-                    </Button>
-                </Col>
+                <Cont>
+                    <Col>
+                        <Saved className="savedcont">
+                            <SavedStrainsList allowSearch />
+                        </Saved>
+                        <BigButt className='big-butt'>
+                            <Button
+                                type='submit'
+                                className="CustomButtonFilled"
+                                onClick={routeChange}
+                            >
+                                Find New Strains!
+                            </Button>
+                        </BigButt>
+                    </Col>
+                </Cont>
             </Row>
             <Foot>
                 <AppFooter />
