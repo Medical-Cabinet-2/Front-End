@@ -13,6 +13,7 @@ import Display from './components/dashboard/Display';
 import NavBar from './components/dashboard/NavBar';
 
 import { getUserInfo } from './store/actions/userAction';
+import Strains from './components/strains/Strains';
 
 function App({getUserInfo}) {
 
@@ -30,7 +31,7 @@ function App({getUserInfo}) {
     <MainContainer>
       <Route exact path = '/log-in' component = {LogIn} />
       <Route exact path = '/register' component = {SignUp} />
-      <PrivateRoute exact path = '/dashboard' component = {Display} />
+      <Route exact path="/strains" component={Strains} />
       <Routes />
     </MainContainer>
     </>

@@ -6,18 +6,23 @@ import { logoutUser } from '../../store/actions/userAction';
 
 const NavDiv = styled.div`
   background-color: #BDD5BC;
-  height: 40px;
+  height: 50px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   z-index: 1000;
   position: fixed;
+  a {
+      color: #105609;
+      font-size: 1.5rem;
+      font-weight: 600;
+  }
 `;
 
 const LogOut = styled.div`
   background-color: #BDD5BC;
-  color: white;
+  color: black;
   fontFamily: Roboto, sans-serif;
   fontSize: 20;
   textDecoration: none;
@@ -50,17 +55,21 @@ const NavBar = ({ loggedIn, logoutUser }) => {
         {/* register and login should not appear on navbar when loggedin */}
         {!loggedIn && (
             <>
-        <div>
-            <Link to='/register'>Register</Link>
-        </div>
-        <div>
-            <Link to='/log-in'>Login</Link>
-        </div>
-        </>
+            <div>
+                <Link to='/register'>Register</Link>
+            </div>
+            <div>
+                <Link to='/log-in'>Login</Link>
+            </div>
+            </>
         )}
-       <LogOut onClick={logout}>
-            Logout <span role='img' aria-label='cry'>😭</span>
-       </LogOut>
+        {loggedIn && (
+            <>
+            <LogOut onClick={logout}>
+                Logout <span role='img' aria-label='cry'>😭</span>
+            </LogOut>
+            </>
+        )}
     </NavDiv>
   );
 };
