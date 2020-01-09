@@ -12,7 +12,7 @@ export const getStrains = () => dispatch => {
     dispatch({ type: GET_STRAINS_START });
 
     axiosWithAuth()
-        .get("https://medicalcabinet.herokuapp.com/api/strains")
+        .get("https://node-server-med-cabinet.herokuapp.com/api/strains")
         .then(res => dispatch({ type: GET_STRAINS_SUCCESS, payload: res.data }))
         .catch(error => {
         dispatch({ type: GET_STRAINS_FAILURE, payload: error.response });

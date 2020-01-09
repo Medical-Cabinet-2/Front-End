@@ -158,8 +158,44 @@ input[type = text] {
 .reghead {
   text-align: center;
   padding-bottom: 5%;
+  background-color: black;
+  padding-top: 2%;
 }
 
 .linksign {
   font-size: 1rem;
+  background-color: black;
+}
+
+.logout {
+  color: #105609;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.labels {
+  color: white;
+}
+
+.strainslist {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.bic {
+  margin: 5%;
+}
+
+.strainhead {
+  margin: 5%;
+}
+
+.menu {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-content: center;
 }

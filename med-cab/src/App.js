@@ -6,7 +6,6 @@ import './App.css';
 import SignUp from './components/sign-up-form/signUp';
 import LogIn from './components/login-form/logIn';
 import { MainContainer } from './AppStyles'
-import Display from './components/dashboard/Display';
 import NavBar from './components/dashboard/NavBar';
 
 import { getUserInfo } from './store/actions/userAction';
