@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Assistant', sans-serif;
 }
 
 .App-logo {
@@ -76,4 +77,89 @@ input[type = text] {
   width: 65%;
 }
 
+.fSgIUD {
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 90%;
+}
 
+.big-butt {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.foot {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.savedcont {
+  margin-top: 150px;
+}
+
+.bigboyform {
+  background-color: darkolivegreen;
+  height: 250px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.fields {
+  opacity: 1;
+}
+
+.returndash {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.linkcont {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.linkz {
+  margin: 3%;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #BDD5BC;
+}
+
+.formcont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.logfield {
+  margin-left: 5%;
+}
+
+.logfield1 {
+  margin-left: 3%;
+  width: 98%;
+}
+
+.reghead {
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.linksign {
+  font-size: 1rem;
+}

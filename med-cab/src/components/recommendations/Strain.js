@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addStrainToSaved, removeStrainFromSaved } from '../../store/actions';
+import { addStrainToSaved, removeStrain } from '../../store/actions';
 import {
     Card,
     CardImg,
@@ -26,7 +26,7 @@ const Strain = props => {
 
     const removedFromSaved = e => {
         e.preventDefault();
-        dispatch(removeStrainFromSaved(strain));
+        removeStrain(strain);
     };
 
     return (

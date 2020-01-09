@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, FormGroup } from 'reactstrap';
-import {withFormik, Field } from 'formik';
+import { withFormik, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
 import { SignIn, RegisterLink, Errors, Heading, FormLinks } from './logInStyles';
 import { HeadingContainer, FormContainer } from '../sign-up-form/signUpStyles';
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
-const LogIn = ({ values, errors, touched, status }, props) => {
+// { values, errors, touched, status }
+
+const LogIn = ({ values, errors, touched, status, handleSubmit }) => {
     // const [user, setUser] = useState([]);
 
     // const handleSubmit = (event) => {
@@ -24,23 +25,23 @@ const LogIn = ({ values, errors, touched, status }, props) => {
                 <Heading>Welcome back!</Heading>
             </HeadingContainer>
             <FormContainer>
-                <Form id = 'log-in-form'>
+                <Form onSubmit={handleSubmit} className="formcont">
                     <FormGroup>
-                    {/*E-Mail*/}
+                    {/* E-Mail */}
                     <label htmlFor = 'email'>E-Mail:</label>
-                    <Field type = 'text' name = 'email' />
+                    <Field type = 'text' name = 'email' className="logfield"/>
                     </FormGroup>
                     {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
 
                     <FormGroup>
-                    {/*Password*/}
+                    {/* Password */}
                     <label htmlFor = 'password'>Password:</label>
-                    <Field type = 'text' name = 'password' />
+                    <Field type = 'password' name = 'password' className="logfield1"/>
                     </FormGroup>
                     {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
-                    <FormGroup>
-                        <Field type = 'submit' name = 'submit' value ='Log In' />
+                    <FormGroup className="buttons">
+                        <Field type = 'submit' name = 'submit' value ='Log-In' />
                     </FormGroup>
 
                 </Form>
@@ -52,7 +53,7 @@ const LogIn = ({ values, errors, touched, status }, props) => {
                 </RegisterLink>
 
                 <RegisterLink>
-                    <p>Forgot password? <a href = '#'>Click here.</a></p>
+                    <p><b>Forgot password? <a href = '#'>Click here.</a></b></p>
                 </RegisterLink>
 
             </FormLinks> 
@@ -71,7 +72,7 @@ const LogInValidation = withFormik ({
         };
     },
     validationSchema: Yup.object().shape({
-        email: Yup.string().email('Not a vaild email ex. (MyEmail@aol.com)').required('E-mail is required.'),
+        email: Yup.string().email('Not a vaild email; Ex: MyEmail@aol.com').required('E-mail is required.'),
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password')
     }),
     handleSubmit(values, { setStatus, props }) {
@@ -81,8 +82,9 @@ const LogInValidation = withFormik ({
         axios
             .post(`${URL}`, values)
             .then(res => {
-                console.log(res);
-                localStorage.setItem("token", res.data.token);
+                console.log("FUCK", res.data);
+                setStatus(res.data);
+                localStorage.setItem("token", res.data.credentials.token);
                 props.history.push('/dashboard');
             })
             .catch(err => console.log(err.response));

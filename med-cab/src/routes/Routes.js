@@ -14,8 +14,8 @@ const Routes = () => {
             exact
             component={StrainRecs}
         />
-        <PrivateRoute path = "/dashboard" exact component={Display} />
-        <PrivateRoute path="/strains" exact component={Strains} />
+        <PrivateRoute exact path = "/dashboard" component={Display} />
+        <PrivateRoute exact path="/strains" component={Strains} />
         </>
     );
 };

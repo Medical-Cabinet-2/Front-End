@@ -15,7 +15,7 @@ const SearchDiv = styled.div`
 `;
 
 const SearchContainer = styled.div`
-    padding: 2%;
+    padding: 5%;
     font-family: "Script MT";
 `;
 

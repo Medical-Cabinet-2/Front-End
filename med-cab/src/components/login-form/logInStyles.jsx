@@ -28,27 +28,48 @@ export const SignIn = styled.div`
 export const FormContainer = styled.div`
     background: rgba(255,255,204, 0.1);
     z-index: 2;
-
+    // display:flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    //flex-wrap: wrap;
+    background-image: url(${FormBackground});
+   // background-repeat: repeat;
+    // background-size: 80%;
+    //text-align: center;
+    // border: 2px solid black;
+    //width: 90%;
+    // background-color: blue;
+    color:white;
+    opacity: 0.8;
 `;
 
 export const RegisterLink = styled.div`
+    display:flex;
+    justify-content: space-around;
     text-align: center;
+    font-size: 25px;
+    color: white;
+    // background-color black;
+
 `;
 
 export const Errors = styled.p`
-    font-weight: 900;
+    font-weight: 700;
     margin: 1em 0;
-    size: 2rem;
+    size: 3rem;
     color: red;
     font-family: "Assistant", sans-serif;
 `;
 
 export const Heading = styled.h1`
     text-align: center;
-    font-size 3rem;
+    font-size 4.8rem;
     font-family: "Courgette", cursive;
     color: white;
-    padding: 0 1em;
+    // padding: 0 1em;
+    
+    
 `;
 
 export const FormLinks = styled.div`
@@ -61,5 +82,7 @@ export const FormLinks = styled.div`
     width: 100%;
     max-width: 100%;
     padding-top: 1.5em
+    text-decoration: underline;
+    // font-size: 50px;
 `;
 
