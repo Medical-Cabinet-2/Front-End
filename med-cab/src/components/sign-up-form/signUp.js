@@ -23,7 +23,8 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
 
     return (
         <Register>
-            <Form onSubmit={handleSubmit}>
+            <h2 className="reghead">Sign up!</h2>
+            <Form onSubmit={handleSubmit} className='formcont'>
                 {/*Name*/}
                 <label htmlFor = 'first_name'><b>First Name: </b></label>
                 <Field type = 'text' name = 'first_name' />
@@ -59,11 +60,11 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
                     <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
                 </label> */}
-                <FormGroup>
+                <FormGroup className="buttons">
                     <Field type = 'submit' name = 'submit' value ='Register' onClick={SignUpValidation}/>
                 </FormGroup>
             </Form>
-            <SignInLink>
+            <SignInLink className="linksign">
                 <p><b>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></b></p>
             </SignInLink>
         </Register>

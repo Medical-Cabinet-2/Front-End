@@ -1,25 +1,46 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import PrivateRoute from './routes/PrivateRoute';
+import { connect } from 'react-redux';
 import Routes from './routes/Routes';
 import './App.css';
 import SignUp from './components/sign-up-form/signUp';
 import LogIn from './components/login-form/logIn';
-import VerifyAge from './components/confirm-age/ageVerifier';
+// import VerifyAge from './components/confirm-age/ageVerifier';
 
 import { MainContainer } from './AppStyles'
 import Display from './components/dashboard/Display';
+import NavBar from './components/dashboard/NavBar';
 
-function App() {
+import { getUserInfo } from './store/actions/userAction';
+
+function App({getUserInfo}) {
+
+  const loggedIn = localStorage.getItem('token');
+
+  useEffect(() => {
+    if (loggedIn) {
+      getUserInfo(loggedIn);
+    }
+  }, [loggedIn, getUserInfo]);
 
   return (
+    <>
+    <NavBar />
     <MainContainer>
-      <Route path = '/' component = {VerifyAge} />
       <Route exact path = '/log-in' component = {LogIn} />
       <Route exact path = '/register' component = {SignUp} />
-      <Route exact path = '/dashboard' component = {Display} />
+      <PrivateRoute exact path = '/dashboard' component = {Display} />
       <Routes />
     </MainContainer>
+    </>
   );
 };
 
-export default App;
+const mapStateToProps = state =>{
+  return {
+      
+  };
+}
+
+export default connect(mapStateToProps, {getUserInfo})(App);
