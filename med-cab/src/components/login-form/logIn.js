@@ -49,11 +49,11 @@ const LogIn = ({ values, errors, touched, status, handleSubmit }) => {
             </FormContainer>
             <FormLinks>
                 <RegisterLink>
-                    <p>Don't have an account? <Link to='/register'>Click here to register.</Link></p>
+                    <p><b>Don't have an account? <Link to='/register'>Click here to register.</Link></b></p>
                 </RegisterLink>
 
                 <RegisterLink>
-                    <p>Forgot password? <a href = '#'>Click here.</a></p>
+                    <p><b>Forgot password? <a href = '#'>Click here.</a></b></p>
                 </RegisterLink>
             </FormLinks>
  

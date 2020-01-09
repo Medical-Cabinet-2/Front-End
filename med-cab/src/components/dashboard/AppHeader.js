@@ -7,7 +7,7 @@ const HeaderContainer = styled.section`
   justify-content: center;
   position: fixed;
   padding-left: 12vw;
-  background-color: rgba(34, 139, 34, 0.5);
+  // background-color: rgba(34, 139, 34, 0.5);
   width: 87%;
   min-height: 13.6vh;
   border-bottom-right-radius: 50px;

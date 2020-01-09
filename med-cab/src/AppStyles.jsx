@@ -11,4 +11,5 @@ export const MainContainer = styled.div`
     background-size: 150%;
     background-repeat: no-repeat;
     z-index: -10;
+    
 `;
