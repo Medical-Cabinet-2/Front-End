@@ -2,18 +2,12 @@ import React from 'react';
 import { Col, Row, Button } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import SavedStrainsList from '../recommendations/SavedStrainsList';
-import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 
 import styled from 'styled-components';
 
 const Saved = styled.div`
     marginTop: '5%
-`;
-
-const Head = styled.div`
-    display: 'flex',
-    marginTop: '16%'
 `;
 
 const Cont = styled.div`
@@ -44,9 +38,6 @@ const Display = (props) => {
     return (
         <div>
             <Row>
-                <Head>
-                    <AppHeader />
-                </Head>
                 <Cont>
                     <Col>
                         <Saved className="savedcont">
