@@ -19,11 +19,16 @@ export default function Strains() {
         {isFetching ? (
             <ClimbingBoxLoader />
         ) : (
-            <div className="strainslist">
-            {/* {error.length ? error && <p>{error}</p> : <></>} */}
-            {strains.map((item, index) => (
-                <Strain strain={item} key={index} allowSave />
-            ))}
+            <div>
+                <div className="menu">
+                    <h1 style={{textAlign: 'center', color: 'white', fontWeight: '700', backgroundColor: '#264D2F', padding: '2%', width: '600px'}}>Strain Menu:</h1>
+                </div>
+                <div className="strainslist">
+                {/* {error.length ? error && <p>{error}</p> : <></>} */}
+                {strains.map((item, index) => (
+                    <Strain strain={item} key={index} allowSave />
+                ))}
+                </div>
             </div>
         )}
         </>

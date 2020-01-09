@@ -13,7 +13,7 @@ export const Register = styled.div` *{ for sign up}*
     /flex-wrap: wrap;
      width: 30%;
     //  height: 20%;
-    // margin:0 auto;
+    margin: 25% auto;
     font-size: 20px;
     color: white; 
     opacity: 0.9;
