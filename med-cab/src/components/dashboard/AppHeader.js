@@ -4,11 +4,10 @@ import styled from "styled-components";
 const HeaderContainer = styled.section`
   display: flex;
   justify-content: center;
-  position: fixed;
   padding-left: 12vw;
   background-color: #9FB79E;
   width: 100%;
-  min-height: 13.6vh;
+
   border-bottom-right-radius: 50px;
   box-shadow: 5px 10px 5px darkolivegreen;
   h1 {
