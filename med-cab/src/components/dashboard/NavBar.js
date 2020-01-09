@@ -63,7 +63,7 @@ const NavBar = ({ loggedIn, logoutUser }) => {
             </div>
             </>
         )}
-        {loggedIn && (
+        {!loggedIn && (
             <>
             <LogOut onClick={logout}>
                 Logout <span role='img' aria-label='cry'>😭</span>

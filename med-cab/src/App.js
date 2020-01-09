@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import PrivateRoute from './routes/PrivateRoute';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Routes from './routes/Routes';
 import './App.css';
