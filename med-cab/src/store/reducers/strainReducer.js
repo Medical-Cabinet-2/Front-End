@@ -8,7 +8,7 @@ const initialState = {
         type: "hybrid",
         rating: 4.4,
         effects: "Relaxed, Hungry, Uplifted",
-        description: "The potency of this strain gives the consumer a one-two punch to the head and body. Its effects may help with managing nausea, stress, minor body aches, and sleeplessness.",
+        description: "The potency of this strain gives the consumer a one-two punch to the head and body. The high from OG Kush is more head-focused than physical. It starts with a sudden headrush that may lead users to feel more focused on their surroundings; sounds and colors may seem intensified. This alteration of the senses may soon give way to a general uplift in mood that progresses towards euphoria. The increase in focus is not as cerebral as with more pure sativas -- smokers will not suffer from a disorienting sense of rapid thought association or “mindrace.”  It’s a versatile smoke that lends itself to the user’s mood and mindset. Its effects may help with managing nausea, stress, pain, minor body aches, and sleeplessness.",
         img: "https://assets.wikileaf.com/assets/strains/strain/OG_Kush_500x500.png"
         },
         {
@@ -16,8 +16,8 @@ const initialState = {
         name: "Tangie",
         type: "sativa",
         rating: 4.1,
-        effects: "Happy, Hungry, Focused",
-        description: "The potency of this strain gives the consumer a one-two punch to the head and body. Its effects may help with managing nausea, stress, minor body aches, and sleeplessness.",
+        effects: "Happy, Hungry, Focused, Creative, Paranoia",
+        description: "Heavily influenced by Sativa, Tangie gives recreational users the uplifting effects they are looking for. Cerebral characteristics include euphoria, creativity, focus, and happiness. The THC level is above average making it more suitable for the intermediate or advanced user. For medical users, the herb is versatile due to its balanced nature. Try it for its sedative effect that may alleviate pain, stress, depression, and insomnia. Some have reported that it is good munchie herb; use it for digestive problems, lack of appetite, and nausea. Side effects of dry mouth and bloodshot eyes are typical for cannabis products.",
         img: "https://assets.wikileaf.com/assets/strains/strain/Tangie.jpg"
         },
         {

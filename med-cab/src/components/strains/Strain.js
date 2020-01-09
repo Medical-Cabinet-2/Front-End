@@ -21,11 +21,11 @@ const Strain = props => {
     return (
         <div style={{ border: "1px solid lightgrey", width: "30rem", backgroundColor: 'white', margin: "2% auto" }}>
         <img src={img} alt="smoke weed erryday" style={{width: '200px'}}/>
-        <h4>{name}</h4>
-        <p>{type}</p>
-        <p>{rating}</p>
-        <p>{effects}</p>
-        <p>{description}</p>
+        <h4>Strain Name: {name}</h4>
+        <p>Type: {type}</p>
+        <p>Rating: {rating}</p>
+        <p>Effects: {effects}</p>
+        <p>Description: <br/>{description}</p>
         {props.allowSave && (
             <button onClick={addToSaved}>Add to saved List</button>
         )}
