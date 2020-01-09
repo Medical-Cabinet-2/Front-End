@@ -1,46 +1,74 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-} from 'reactstrap';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { logoutUser } from '../../store/actions/userAction';
 
-const NavBarre = styled(NavBar)`
-    background: teal;
+const NavDiv = styled.div`
+  background-color: #BDD5BC;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
 `;
 
-const NavBar = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
+const LogOut = styled.div`
+  background-color: #BDD5BC;
+  color: white;
+  fontFamily: Roboto, sans-serif;
+  fontSize: 20;
+  textDecoration: none;
+  cursor: pointer;
+`
 
-    const toggle = () => setIsOpen(!isOpen);
+const NavBar = ({ loggedIn, logoutUser }) => {
 
-    return (
+  const history = useHistory();
+
+  const logout = e => {
+    e.preventDefault();
+    logoutUser();
+    history.push('/log-in');
+  }
+
+  return (
+    <NavDiv>
         <div>
-            <NavBarre color='teal' dark expand='md'>
-                <NavbarBrand href="">Med Cabinet</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className='ml-auto' navbar>
-                        <NavItem>
-                            <NavLink to='/intake/symptoms' className="NavLink">Recommender</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink to="/dashboard" className="NavLink">Dashboard</NavLink>
-                        </NavItem>
-                    </Nav>
-                </Collapse>
-            </NavBarre>
+            <a href="https://medical-cabinet-2.github.io/Marketing/index.html">Home</a>
         </div>
-    );
+        <div>
+            <a href="https://medical-cabinet-2.github.io/Marketing/about.html">About</a>
+        </div>
+        {/* <div>
+            <Link to='/log-in'>Log In</Link>
+        </div> */}
+
+      
+        {/* register and login should not appear on navbar when loggedin */}
+        {!loggedIn && (
+            <>
+        <div>
+            <Link to='/register'>Register</Link>
+        </div>
+        <div>
+            <Link to='/log-in'>Login</Link>
+        </div>
+        </>
+        )}
+       <LogOut onClick={logout}>
+            Logout <span role='img' aria-label='cry'>😭</span>
+       </LogOut>
+    </NavDiv>
+  );
 };
 
-export default NavBar;
+function mapStateToProps(state) {
+  return {
+    loggedIn: state.loggedIn
+  }
+}
+
+export default connect(mapStateToProps, { logoutUser })(NavBar)
