@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   Col,
-  Button,
   Form as StrapForm,
   FormGroup,
-  Label,
   Input,
-  FormText,
   Card
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.css";

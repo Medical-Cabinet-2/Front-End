@@ -7,14 +7,16 @@ import LogIn from './components/login-form/logIn';
 import VerifyAge from './components/confirm-age/ageVerifier';
 
 import { MainContainer } from './AppStyles'
+import Display from './components/dashboard/Display';
 
 function App() {
 
   return (
     <MainContainer>
       <Route path = '/' component = {VerifyAge} />
-      <Route path = '/log-in' component = {LogIn} />
-      <Route path = '/register' component = {SignUp} />
+      <Route exact path = '/log-in' component = {LogIn} />
+      <Route exact path = '/register' component = {SignUp} />
+      <Route exact path = '/dashboard' component = {Display} />
       <Routes />
     </MainContainer>
   );

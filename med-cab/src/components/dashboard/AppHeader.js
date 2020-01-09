@@ -2,20 +2,22 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderContainer = styled.section`
-  margin-top: 2%;
   display: flex;
   justify-content: center;
   position: fixed;
   padding-left: 12vw;
-  background-color: rgba(34, 139, 34, 0.5);
-  width: 87%;
+  background-color: #9FB79E;
+  width: 100%;
   min-height: 13.6vh;
   border-bottom-right-radius: 50px;
+  box-shadow: 5px 10px 5px darkolivegreen;
   h1 {
+    margin-top: 2%;
     font-family: "Script MT";
-    font-size: 2rem;
-    color: white;
+    font-size: 3rem;
+    color: #1B5919;
     text-align: center;
+    font-weight: 900;
   }
 `;
 
