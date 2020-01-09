@@ -94,7 +94,9 @@ const SignUpValidation = withFormik ({
 
         const newUser = {
             email: values.email,
-            password: values.password
+            password: values.password,
+            first_name: values.first_name,
+            last_name: values.last_name
         };
 
         axios
