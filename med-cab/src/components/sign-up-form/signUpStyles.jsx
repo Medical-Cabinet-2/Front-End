@@ -3,20 +3,23 @@ import FormBackground from '../../images/formBackground.jpg';
 
 export const Register = styled.div` *{ for sign up}*
     display: flex;
-    justify-content: space-evenly;
+    //  justify-content: center;
     // align-items: center;
-    flex-direction: column;
+    // flex-direction: column;
     background-image: url(${FormBackground});
     // background-repeat: repeat;
-    // background-size: 200px;
+     background-size: 100%;
     // border: 3px solid black;
     /flex-wrap: wrap;
-    width: 90%;
-    height: 30%;
-    margin:0 auto;
-    font-size: 25px;
-    color: white;
-    background-color: blue;
+     width: 30%;
+    //  height: 20%;
+    // margin:0 auto;
+    font-size: 20px;
+    color: white; 
+    opacity: 0.9;
+    z-index: 1;
+    padding: 5rem;
+    max-width: 100%;
 `;
 
 export const SignInLink = styled.div`
@@ -35,7 +38,7 @@ export const Errors = styled.p`
     font-weight: 900;
     margin: 1em 0;
     size: 2rem;
-    color: red;
+    color: white;
     font-family: "Assistant", sans-serif;
     
 `;
@@ -50,7 +53,7 @@ export const Heading = styled.h1`
 `;
 
 export const FormContainer = styled.div` *{ for log in}*
-    background: yellow;
+    // background: yellow;
     z-index: 1;
     padding: 4.5em;
     max-width: 100%;
