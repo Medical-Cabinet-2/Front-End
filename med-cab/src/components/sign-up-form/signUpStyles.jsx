@@ -20,6 +20,7 @@ export const Register = styled.div` *{ for sign up}*
     z-index: 1;
     padding: 5rem;
     max-width: 100%;
+    box-shadow: 5px 8px 5px black;
 `;
 
 export const SignInLink = styled.div`
