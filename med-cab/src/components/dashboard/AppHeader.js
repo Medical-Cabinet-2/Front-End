@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderContainer = styled.section`
+  margin-top: 2%;
   display: flex;
   justify-content: center;
   position: fixed;

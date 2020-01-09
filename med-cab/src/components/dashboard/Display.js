@@ -5,6 +5,24 @@ import SavedStrainsList from '../recommendations/SavedStrainsList';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 
+import styled from 'styled-components';
+
+const Saved = styled.div`
+    marginTop: '5%
+`;
+
+const Head = styled.div`
+    display: 'flex'
+`;
+
+const Foot = styled.div`
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    marginBottom: '5%',
+    marginLeft: '50%'
+`;
+
 const Display = (props) => {
     const routeChange = (e) => {
         e.preventDefault();
@@ -13,20 +31,28 @@ const Display = (props) => {
     };
 
     return (
-        <Row>
-            <AppHeader />
-            <Col>
-                <SavedStrainsList allowSearch />
-                <Button
-                    type='submit'
-                    className="CustomButtonFilled"
-                    onClick={routeChange}
-                >
-                    Find New Strains!
-                </Button>
-            </Col>
-            <AppFooter />
-        </Row>
+        <div>
+            <Row>
+                <Head>
+                    <AppHeader />
+                </Head>
+                <Col>
+                    <Saved>
+                        <SavedStrainsList allowSearch />
+                    </Saved>
+                    <Button
+                        type='submit'
+                        className="CustomButtonFilled"
+                        onClick={routeChange}
+                    >
+                        Find New Strains!
+                    </Button>
+                </Col>
+            </Row>
+            <Foot>
+                <AppFooter />
+            </Foot>
+        </div>
     );
 };
 

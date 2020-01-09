@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { withFormik,  Field } from 'formik';
 import { Form, FormGroup } from 'reactstrap';
 import * as Yup from 'yup';
 import axios from 'axios';
 
-import { Register, SignInLink, Errors, Heading, FormContainer,  HeadingContainer } from './signUpStyles';
+import { Register, SignInLink, Errors } from './signUpStyles';
 
-const SignUp = ({ values, errors, touched, status }) => {
+const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
     // const [user, setUser] = useState([]);
 
     // const handleSubmit = (event) => {
@@ -23,25 +23,30 @@ const SignUp = ({ values, errors, touched, status }) => {
 
     return (
         <Register>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 {/*Name*/}
-                <label htmlFor = 'name'>Name/Nickname:</label>
-                <Field type = 'text' name = 'name' />
-                {touched.name && errors.name && (<Errors>{errors.name} </Errors>)}
+                <label htmlFor = 'first_name'>First Name:</label>
+                <Field type = 'text' name = 'first_name' />
+                {touched.first_name && errors.first_name && (<Errors>{errors.first_name} </Errors>)}
+
+                {/*Name*/}
+                <label htmlFor = 'last_name'>Last Name:</label>
+                <Field type = 'text' name = 'last_name' />
+                {touched.last_name && errors.last_name && (<Errors>{errors.last_name} </Errors>)}
 
                 {/*Age*/}
-                <label htmlFor = 'age'>Age:</label>
+                {/* <label htmlFor = 'age'>Age:</label>
                 <Field type = 'number' name = 'age' />
-                {touched.age && errors.age && (<Errors>{errors.age} </Errors>)}
+                {touched.age && errors.age && (<Errors>{errors.age} </Errors>)} */}
 
                 {/*Email*/}
                 <label htmlFor = 'email'>E-mail:</label>
                 <Field type = 'text' name = 'email' />
                 {touched.email && errors.email && (<Errors>{errors.email} </Errors>)}
                 {/*State*/}
-                <label htmlFor = 'state'>State:</label>       
+                {/* <label htmlFor = 'state'>State:</label>       
                 <Field type = 'text' name = 'state' />
-                {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}     
+                {touched.state && errors.state && (<Errors>{errors.state} </Errors>)}      */}
 
                 {/*Password*/}
                 <label htmlFor = 'password'>Password:</label>
@@ -49,13 +54,13 @@ const SignUp = ({ values, errors, touched, status }) => {
                 {touched.password && errors.password && (<Errors>{errors.password} </Errors>)}
 
                 {/*Terms of Service*/}
-                <label htmlFor = 'terms'>
+                {/* <label htmlFor = 'terms'>
                     Terms of Service Agreement
                     <Field type = 'checkbox' name = 'ToS' checked={values.ToS}/>
                     {touched.ToS && errors.ToS && (<Errors>{errors.ToS} </Errors>)}
-                </label>
+                </label> */}
                 <FormGroup>
-                    <Field type = 'submit' name = 'submit' value ='Register' />
+                    <Field type = 'submit' name = 'submit' value ='Register' onClick={SignUpValidation}/>
                 </FormGroup>
             </Form>
             <SignInLink>
@@ -66,23 +71,22 @@ const SignUp = ({ values, errors, touched, status }) => {
 };
 
 const SignUpValidation = withFormik ({
-    mapPropsToValues({ name, age, email, state, password, ToS }){
+    mapPropsToValues({ first_name, last_name, age, email, state, password, ToS }){
     return {
-        name: name || '',
-        age: age || '',
+        first_name: first_name || '',
+        last_name: last_name || '',
         email: email || '',
-        state: state || '',
         password: password || '',
-        ToS: ToS || false
     };
 },
     validationSchema: Yup.object().shape({
-        name: Yup.string().required('Name is required.'),
-        age: Yup.number().moreThan(21, 'You must be 21 or over to register to Med Cabinet').required('Please enter your age.'),
+        first_name: Yup.string().required('First name is required.'),
+        last_name: Yup.string().required('Last name is required.'),
+        // age: Yup.number().moreThan(21, 'You must be 21 or over to register to Med Cabinet').required('Please enter your age.'),
         email: Yup.string().email('Email is invalid. ex. MyEmail@lol.co)').required('E-mail is required.'),
-        state: Yup.string().length(2, 'State must be 2 characters ex. (CA)').required('State is required.'),
+        // state: Yup.string().length(2, 'State must be 2 characters ex. (CA)').required('State is required.'),
         password: Yup.string().min(6, 'Password must be more than 6 characters.').required('Please enter a password'),
-        ToS: Yup.bool().oneOf([true], 'You have to agree to the Terms and Conditions to continue with the regisration.')
+        // ToS: Yup.bool().oneOf([true], 'You have to agree to the Terms and Conditions to continue with the regisration.')
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submitting', values);
@@ -98,7 +102,7 @@ const SignUpValidation = withFormik ({
             .then(res => {
                 console.log(`success`, res);
                 setStatus(res.data);
-                props.history.push("/log-in");
+                props.history.push("/dashboard");
             })
             .catch(err => console.log(err.response));
 
