@@ -12,7 +12,7 @@ export default function Strains(props) {
 
     useEffect(() => {
         dispatch(getStrains());
-    }, []);
+    }, [dispatch]);
 
     console.log(strains);
 

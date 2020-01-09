@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 export default function AppFooter() {
     return (
-        <section>
+        <section className='foot'>
             <p>© 2019 . Med Cabinet</p>
         </section>
     );
