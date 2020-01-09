@@ -4,10 +4,10 @@ import { ClimbingBoxLoader } from "react-spinners";
 import { getStrains } from "./strainsSlice";
 import Strain from "./Strain";
 
-export default function Strains(props) {
+export default function Strains() {
     const strains = useSelector(state => state.strains.strains);
     const isFetching = useSelector(state => state.strains.isFetching);
-    const error = useSelector(state => state.strains.error);
+    // const error = useSelector(state => state.strains.error);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function Strains(props) {
             <ClimbingBoxLoader />
         ) : (
             <>
-            {error.length ? error && <p>{error}</p> : <></>}
+            {/* {error.length ? error && <p>{error}</p> : <></>} */}
             {strains.map((item, index) => (
                 <Strain strain={item} key={index} allowSave />
             ))}

@@ -152,3 +152,9 @@ input[type = text] {
 .linksign {
   font-size: 1rem;
 }
+
+.logout {
+  color: #105609;
+  font-size: 1.5rem;
+  font-weight: 600;
+}

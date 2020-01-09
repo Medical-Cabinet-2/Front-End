@@ -24,10 +24,10 @@ const LogOut = styled.div`
   background-color: #BDD5BC;
   color: black;
   fontFamily: Roboto, sans-serif;
-  fontSize: 20;
+  fontSize: 1.5rem;
   textDecoration: none;
   cursor: pointer;
-`
+`;
 
 const NavBar = ({ loggedIn, logoutUser }) => {
 
@@ -63,13 +63,9 @@ const NavBar = ({ loggedIn, logoutUser }) => {
             </div>
             </>
         )}
-        {!loggedIn && (
-            <>
-            <LogOut onClick={logout}>
-                Logout <span role='img' aria-label='cry'>😭</span>
-            </LogOut>
-            </>
-        )}
+        <LogOut onClick={logout} className='logout'>
+            Logout <span role='img' aria-label='cry'>😭</span>
+        </LogOut>
     </NavDiv>
   );
 };
