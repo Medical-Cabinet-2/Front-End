@@ -14,19 +14,17 @@ export default function Strains() {
         dispatch(getStrains());
     }, [dispatch]);
 
-    console.log(strains);
-
     return (
         <>
         {isFetching ? (
             <ClimbingBoxLoader />
         ) : (
-            <>
+            <div className="strainslist">
             {/* {error.length ? error && <p>{error}</p> : <></>} */}
             {strains.map((item, index) => (
                 <Strain strain={item} key={index} allowSave />
             ))}
-            </>
+            </div>
         )}
         </>
     );

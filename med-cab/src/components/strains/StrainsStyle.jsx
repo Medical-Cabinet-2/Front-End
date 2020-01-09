@@ -1,4 +1,4 @@
-import Background from './images/mainBackground.jpg';
+import Background from '../../images/mainBackground.jpg';
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`

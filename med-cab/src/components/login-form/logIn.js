@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import { SignIn, RegisterLink, Errors, Heading, FormLinks } from './logInStyles';
 import { HeadingContainer, FormContainer } from '../sign-up-form/signUpStyles';
+import { MainContainer } from '../../AppStyles';
 
 // { values, errors, touched, status }
 

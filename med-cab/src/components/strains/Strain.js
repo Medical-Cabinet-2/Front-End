@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 const Strain = props => {
     const dispatch = useDispatch();
     const strain = props.strain;
-    const { name, type, rating, effects, description } = strain;
+    const { name, type, rating, effects, description, img } = strain;
 
     const addToSaved = e => {
         e.preventDefault();
@@ -19,7 +19,8 @@ const Strain = props => {
     };
 
     return (
-        <div style={{ border: "1px solid lightgrey", width: "30rem" }}>
+        <div style={{ border: "1px solid lightgrey", width: "30rem", backgroundColor: 'white', margin: "2% auto" }}>
+        <img src={img} alt="smoke weed erryday" style={{width: '200px'}}/>
         <h4>{name}</h4>
         <p>{type}</p>
         <p>{rating}</p>

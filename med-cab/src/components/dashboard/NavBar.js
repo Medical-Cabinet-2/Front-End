@@ -13,6 +13,7 @@ const NavDiv = styled.div`
   align-items: center;
   z-index: 1000;
   position: fixed;
+  margin-bottom: 10%;
   a {
       color: #105609;
       font-size: 1.5rem;
@@ -40,33 +41,35 @@ const NavBar = ({ loggedIn, logoutUser }) => {
   }
 
   return (
-    <NavDiv>
-        <div>
-            <a href="https://medical-cabinet-2.github.io/Marketing/index.html">Home</a>
-        </div>
-        <div>
-            <a href="https://medical-cabinet-2.github.io/Marketing/about.html">About</a>
-        </div>
-        {/* <div>
-            <Link to='/log-in'>Log In</Link>
-        </div> */}
+    <div>
+      <NavDiv>
+          <div>
+              <a href="https://medical-cabinet-2.github.io/Marketing/index.html">Home</a>
+          </div>
+          <div>
+              <Link to='/strains'>Strains</Link>
+          </div>
+          {/* <div>
+              <Link to='/log-in'>Log In</Link>
+          </div> */}
 
-      
-        {/* register and login should not appear on navbar when loggedin */}
-        {!loggedIn && (
-            <>
-            <div>
-                <Link to='/register'>Register</Link>
-            </div>
-            <div>
-                <Link to='/log-in'>Login</Link>
-            </div>
-            </>
-        )}
-        <LogOut onClick={logout} className='logout'>
-            Logout <span role='img' aria-label='cry'>😭</span>
-        </LogOut>
-    </NavDiv>
+        
+          {/* register and login should not appear on navbar when loggedin */}
+          {!loggedIn && (
+              <>
+              <div>
+                  <Link to='/register'>Register</Link>
+              </div>
+              <div>
+                  <Link to='/log-in'>Login</Link>
+              </div>
+              </>
+          )}
+          <LogOut onClick={logout} className='logout'>
+              Logout <span role='img' aria-label='cry'>😭</span>
+          </LogOut>
+      </NavDiv>
+    </div>
   );
 };
 

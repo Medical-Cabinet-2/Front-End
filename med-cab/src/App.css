@@ -176,3 +176,18 @@ input[type = text] {
 .labels {
   color: white;
 }
+
+.strainslist {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.bic {
+  margin: 5%;
+}
+
+.strainhead {
+  margin: 5%;
+}
