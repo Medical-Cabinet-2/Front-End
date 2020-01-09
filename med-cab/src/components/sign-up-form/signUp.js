@@ -12,8 +12,8 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
 
     // const handleSubmit = (event) => {
     //     event.preventDefault();
-    //     props.addUser(user);
-    //     setUser({email:'', password:''});
+        // props.addUser(user);
+        // setUser({email:'', password:''});
     // }
 
     // useEffect(() => {
@@ -65,8 +65,9 @@ const SignUp = ({ values, errors, touched, status, handleSubmit }) => {
                 </FormGroup>
             </Form>
             <SignInLink className="linksign">
-                <p><b>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></b></p>
+                <p>Have an account with us already? <Link to='/log-in'>Sign in here.</Link></p>
             </SignInLink>
+        
         </Register>
     )
 };

@@ -30,8 +30,8 @@ export const SignInLink = styled.div`
     text-decoration: underline;
     // background-color black;
     width: 100%;
+    padding-top: 1em;
     font-size:25px;
-
 `;
 
 export const Errors = styled.p`

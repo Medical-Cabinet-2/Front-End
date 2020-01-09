@@ -2,6 +2,32 @@ import styled from 'styled-components';
 import FormBackground from '../../images/formBackground.jpg';
 
 export const SignIn = styled.div`
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-image: url(${FormBackground});
+    background-repeat: repeat;
+    background-size: 100%;
+    text-align: center;
+    border: 3px solid black;
+    width: 40%;
+    max-width: 100%;
+
+    @media (max-width: 1254px) {
+        width: 60%;
+    }
+
+    @media (max-width: 812px) {
+        width: 100%;
+    }
+
+`;
+
+export const FormContainer = styled.div`
+    background: rgba(255,255,204, 0.1);
+    z-index: 2;
     // display:flex;
     // justify-content: center;
     // align-items: center;
@@ -16,7 +42,6 @@ export const SignIn = styled.div`
     // background-color: blue;
     color:white;
     opacity: 0.8;
-    
 `;
 
 export const RegisterLink = styled.div`
@@ -56,7 +81,8 @@ export const FormLinks = styled.div`
     color: white;
     width: 100%;
     max-width: 100%;
+    padding-top: 1.5em
     text-decoration: underline;
     // font-size: 50px;
-    
 `;
+
