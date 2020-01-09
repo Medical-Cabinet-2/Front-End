@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Col, Row, Button } from 'reactstrap';
+import { Col, Row, Button } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import SavedStrainsList from '../recommendations/SavedStrainsList';
 import AppHeader from './AppHeader';

@@ -101,6 +101,14 @@ const initialState = {
             img: "https://assets.wikileaf.com/assets/strains/strain/Lambs_Bread.jpg"
         },
         {
+            name: "Lamb's Bread",
+            type: "sativa",
+            rating: 4,
+            effects: "Cotton Mouth, Creative, Paranoia",
+            description: "Lamb’s Bread, Lamb’s Breath, Lambsbread - whatever the name the high is the same, with a rush of uplifting energy that hits you hard in the head and giving you a mood boost that is unparalleled. The euphoria and creativity spring to life after only a few puffs and will have you getting through an artist’s block with ease. This is a high that doesn’t want to slow down and will last for hours, so enjoy the stimulation as it takes you through the galaxy because you’ll feel out of this world. Its effects manage nausea, depressed and pain.",
+            img: "https://assets.wikileaf.com/assets/strains/strain/Lambs_Bread.jpg"
+        },
+        {
             name: "Jack the Ripper",
             type: "sativa",
             rating: 4.5,
