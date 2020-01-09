@@ -23,7 +23,7 @@ const NavDiv = styled.div`
 
 const LogOut = styled.div`
   background-color: #BDD5BC;
-  color: black;
+  color: #105609;
   fontFamily: Roboto, sans-serif;
   fontSize: 1.5rem;
   textDecoration: none;
