@@ -158,17 +158,21 @@ input[type = text] {
 .reghead {
   text-align: center;
   padding-bottom: 5%;
+  background-color: black;
+  padding-top: 2%;
 }
 
 .linksign {
   font-size: 1rem;
+  background-color: black;
 }
-<<<<<<< HEAD
 
 .logout {
   color: #105609;
   font-size: 1.5rem;
   font-weight: 600;
 }
-=======
->>>>>>> 2e1c28e53236dc32828c4a8aa1406963f6ddc95b
+
+.labels {
+  color: white;
+}
