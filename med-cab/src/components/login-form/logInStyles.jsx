@@ -15,6 +15,7 @@ export const SignIn = styled.div`
     width: 40%;
     max-width: 100%;
     margin: 25% auto;
+    box-shadow: 5px 8px 5px black;
 
     @media (max-width: 1254px) {
         width: 60%;
