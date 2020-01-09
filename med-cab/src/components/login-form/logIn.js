@@ -15,16 +15,16 @@ const LogIn = ({ values, errors, touched, status, handleSubmit }) => {
 
     // const handleSubmit = (event) => {
     //     event.preventDefault();
-    //     setUser({email:'', password:''});
+        // setUser({email:'', password:''});
     // }
 
     return (
         <SignIn>
+
             <HeadingContainer>
                 <Heading>Welcome back!</Heading>
             </HeadingContainer>
             <FormContainer>
-
                 <Form onSubmit={handleSubmit} className="formcont">
                     <FormGroup>
                     {/* E-Mail */}
@@ -45,17 +45,20 @@ const LogIn = ({ values, errors, touched, status, handleSubmit }) => {
                     </FormGroup>
 
                 </Form>
-
-            </FormContainer>
+                
+            </FormContainer>     
             <FormLinks>
                 <RegisterLink>
-                    <p><b>Don't have an account? <Link to='/register'>Click here to register.</Link></b></p>
+                    <p>Don't have an account? <Link class = 'links' to='/register'>Click here to register.</Link></p>
                 </RegisterLink>
 
                 <RegisterLink>
                     <p><b>Forgot password? <a href = '#'>Click here.</a></b></p>
                 </RegisterLink>
-            </FormLinks>
+
+            </FormLinks> 
+
+            
  
         </SignIn>
     )

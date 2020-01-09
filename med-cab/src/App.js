@@ -5,8 +5,6 @@ import Routes from './routes/Routes';
 import './App.css';
 import SignUp from './components/sign-up-form/signUp';
 import LogIn from './components/login-form/logIn';
-// import VerifyAge from './components/confirm-age/ageVerifier';
-
 import { MainContainer } from './AppStyles'
 import Display from './components/dashboard/Display';
 import NavBar from './components/dashboard/NavBar';
