@@ -13,7 +13,7 @@ const Saved = styled.div`
 
 const Head = styled.div`
     display: 'flex',
-    marginTop: '10%'
+    marginTop: '16%'
 `;
 
 const Cont = styled.div`
