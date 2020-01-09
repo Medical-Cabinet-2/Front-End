@@ -19,8 +19,8 @@ const Strain = props => {
     };
 
     return (
-        <div style={{ border: "1px solid lightgrey", width: "30rem", backgroundColor: 'white', margin: "2% auto", padding: "1%" }}>
-        <img src={img} alt="smoke weed erryday" style={{width: '200px'}}/>
+        <div style={{ border: "1px solid lightgrey", width: "30rem", backgroundColor: 'white', margin: "2% auto", padding: "1%", boxShadow: '3px 5px 3px gainsboro' }}>
+        <img src={img} alt="smoke weed erryday" style={{width: '200px', boxShadow: '2px 3px 2px darkslategrey'}}/>
         <h3 style={{paddingTop: '5%'}}>{name}</h3>
         <p>Type: {type}</p>
         <p>Rating: {rating}</p>
